@@ -55,8 +55,7 @@ $(document).ready(function() {
           overlay.style.zIndex = 9998;
           document.body.appendChild(overlay);
     
-          // Close the full-screen when overlay is clicked
-          overlay.addEventListener('click', function() {
+            overlay.addEventListener('click', function() {
             experienceSection.classList.remove('full-screen');
             document.body.removeChild(overlay);
             button.innerHTML = '<span>View All</span><i class="fas fa-arrow-right"></i>';
