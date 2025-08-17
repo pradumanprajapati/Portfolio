@@ -31,4 +31,39 @@ $(document).ready(function() {
         }
     });
 
+    document.getElementById("viewAllBtn").addEventListener("click", function() {
+        // Get the experience section and the timeline container
+        var experienceSection = document.getElementById("experience");
+        var timeline = document.querySelector(".timeline");
+    
+        // Toggle the full-screen class
+        experienceSection.classList.toggle("full-screen");
+    
+        // Update the button text when clicked
+        var button = document.getElementById("viewAllBtn");
+        if (experienceSection.classList.contains("full-screen")) {
+          button.innerHTML = '<span>Close</span><i class="fas fa-arrow-left"></i>';
+          // Add a background overlay
+          var overlay = document.createElement('div');
+          overlay.id = 'overlay';
+          overlay.style.position = 'fixed';
+          overlay.style.top = 0;
+          overlay.style.left = 0;
+          overlay.style.width = '100%';
+          overlay.style.height = '100%';
+          overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+          overlay.style.zIndex = 9998;
+          document.body.appendChild(overlay);
+    
+            overlay.addEventListener('click', function() {
+            experienceSection.classList.remove('full-screen');
+            document.body.removeChild(overlay);
+            button.innerHTML = '<span>View All</span><i class="fas fa-arrow-right"></i>';
+          });
+        } else {
+          // Remove the background overlay
+          document.body.removeChild(document.getElementById('overlay'));
+          button.innerHTML = '<span>View All</span><i class="fas fa-arrow-right"></i>';
+        }
+      });
 });

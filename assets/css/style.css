@@ -534,7 +534,7 @@ header .navbar ul li a:hover {
 
 /* education section starts */
 .education {
-  background: #e5ecfb;
+  background: white;
   min-height: 80vh;
 }
 .education .qoute {
@@ -641,11 +641,13 @@ header .navbar ul li a:hover {
 
 /* work section starts */
 .work {
-  /* background: #010124; */
-  background: linear-gradient(to bottom, #000031, #00002c);
+  background: linear-gradient(to bottom, #4d4dd0, #4d4dd0);
+  padding: 1rem;
+  min-height: 100vh; /* Ensure container takes full height */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 .work h2 {
-  color: #fff;
+  color: #070707;
   padding: 1rem;
 }
 .work .heading span {
@@ -656,14 +658,12 @@ header .navbar ul li a:hover {
   flex-wrap: wrap;
   gap: 1.5rem;
   margin: 2rem;
+  justify-content: center;
+  overflow: hidden; /* Hide overflowing content */
 }
 .work .box-container .box {
-  flex: 1 1 30rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-  height: 30rem;
+  flex: 1 1 32%; /* Ensures 3 boxes per row, and each box takes up 32% of the space */
+  box-sizing: border-box;
 }
 .work .box-container .box img {
   height: 100%;
@@ -671,14 +671,13 @@ header .navbar ul li a:hover {
   object-fit: cover;
 }
 .work .box-container .box .content {
-  height: 100%;
+  position: relative;
   width: 100%;
-  /* position: absolute; */
-  top: 85%;
-  left: 0;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   display: flex;
   flex-direction: column;
+  padding-bottom: 1rem;
+  box-sizing: border-box;
 }
 .work .box-container .box .content .tag {
   display: flex;
@@ -693,9 +692,6 @@ header .navbar ul li a:hover {
 .work .box-container .box .content .tag h3 {
   font-size: 2rem;
 }
-.work .box-container .box:hover .content {
-  top: 25%;
-}
 .work .desc {
   margin: 2rem;
   display: flex;
@@ -705,30 +701,10 @@ header .navbar ul li a:hover {
 .work .desc p {
   font-size: 1.5rem;
 }
-.work .desc .date{
+.work .desc .date {
   font-size: 1.5rem;
   font-weight: bold;
 }
-
-/* .work .desc .btns {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 2rem;
-}   */
- /* .work .desc .btns .btn {
-  line-height: 0;
-  display: inline;
-  padding: 1.5rem 2.5rem;
-  border-radius: 0.5rem;
-  font-size: 1.5rem;
-  color: #fff;
-  background: rgb(12, 12, 12);
-  margin-right: 2rem;
-} */
-/* .work .desc .btns .btn:hover {
-  background: #310ae0f5;
-} */
 .work .viewall {
   display: flex;
   justify-content: center;
@@ -762,6 +738,8 @@ header .navbar ul li a:hover {
 .work .viewall .btn:hover i {
   transform: translateX(5px);
 }
+
+
 /* work section ends */
 
 /* experience section starts */
@@ -1227,4 +1205,26 @@ form .button-area {
 #scroll-top.active {
   top: calc(100% - 12rem);
 }
-/* scroll top ends */
+/* Full screen styles */
+.full-screen .timeline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 9999;
+  overflow: auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.morebtn {
+  text-align: center;
+}
