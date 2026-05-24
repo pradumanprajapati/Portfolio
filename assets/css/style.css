@@ -76,6 +76,7 @@ header {
 section {
   min-height: 100vh;
   padding: 2rem 9%;
+  scroll-margin-top: 8rem;
 }
 .heading {
   font-size: 3.5rem;
