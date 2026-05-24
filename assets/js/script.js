@@ -37,22 +37,71 @@ $(document).ready(function () {
         }, 500, 'linear')
     });
 
-    // <!-- emailjs to mail contact form data -->
-    $("#contact-form").submit(function (event) {
-        emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");
+    // Experience years counter
+    function getExperienceYears(startDate) {
+        const now = new Date();
+        let years = now.getFullYear() - startDate.getFullYear();
+        let months = now.getMonth() - startDate.getMonth();
 
-        emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
+        if (now.getDate() < startDate.getDate()) {
+            months--;
+        }
+
+        if (months < 0) {
+            years--;
+            months += 12;
+        }
+
+        if (years < 0) {
+            return '0 years';
+        }
+
+        const yearLabel = years === 1 ? 'year' : 'years';
+        const monthLabel = months === 1 ? 'month' : 'months';
+
+        if (months === 0) {
+            return `${years} ${yearLabel}`;
+        }
+
+        return `${years} ${yearLabel} ${months} ${monthLabel}`;
+    }
+
+    function updateExperienceYears() {
+        const experienceElement = document.getElementById('experienceYears');
+        if (!experienceElement) return;
+
+        const careerStartDate = new Date(2022, 9, 1); // October 1, 2022
+        experienceElement.textContent = getExperienceYears(careerStartDate);
+    }
+
+    updateExperienceYears();
+
+    // emailjs to mail contact form data
+    emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");
+    $("#contact-form").on("submit", function (event) {
+        event.preventDefault();
+        const form = this;
+        const receiver = "pradumanprajapati70@gmail.com";
+        const name = form.from_name.value.trim();
+        const email = form.from_email.value.trim();
+        const phone = form.phone.value.trim();
+        const message = form.message.value.trim();
+        const subject = `New query from ${name || 'website visitor'}`;
+        const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`;
+        const mailtoLink = `mailto:${receiver}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        emailjs.sendForm('contact_service', 'template_contact', form)
             .then(function (response) {
                 console.log('SUCCESS!', response.status, response.text);
-                document.getElementById("contact-form").reset();
-                alert("Form Submitted Successfully");
+                form.reset();
+                alert("Message sent successfully. I will reply soon!");
             }, function (error) {
                 console.log('FAILED...', error);
-                alert("Form Submission Failed! Try Again");
+                alert("EmailJS could not send your message automatically. The mail client will open so you can send it manually.");
+                window.location.href = mailtoLink;
             });
-        event.preventDefault();
     });
-    // <!-- emailjs to mail contact form data -->
+    // emailjs to mail contact form data
 
 });
 
@@ -96,7 +145,7 @@ function showSkills(skills) {
         skillHTML += `
         <div class="bar">
               <div class="info">
-                <img src=${skill.icon} alt="skill" />
+                <img src="${skill.icon}" alt="${skill.name}" />
                 <span>${skill.name}</span>
               </div>
             </div>`

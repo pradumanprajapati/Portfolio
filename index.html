@@ -9,6 +9,7 @@
     content="Praduman, portfolio, Praduman, full stack dev, personal portfolio lifecodes, portfolio design, portfolio website, personal portfolio" />
   <meta name="description"
     content="Welcome to Praduman's Portfolio. Full-Stack Web Developer and Android App Developer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css">
   <!-- Font Awesome -->
@@ -23,22 +24,25 @@
 <body oncontextmenu="return true">
 
   <!-- navbar starts -->
-  <header>
-    <a href="/" class="logo"><i class="fab fa-node-js"></i> Praduman</a>
-
-    <div id="menu" class="fas fa-bars"></div>
-    <nav class="navbar">
-      <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#work">Project</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#certification">Certification</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+    <div class="container">
+      <a href="/" class="navbar-brand logo"><i class="fab fa-node-js"></i> Praduman</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link fw-bold active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="#work">Project</a></li>
+          <li class="nav-item"><a class="nav-link fw-bold" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certification">Certification</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
   </header>
   <!-- navbar ends -->
 
@@ -86,14 +90,11 @@
         <h3>I'm Praduman</h3>
         <span class="tag">Full Stack Developer</span>
 
-        <p>I am a .NET Full-Stack Developer based in Gorakhpur, Uttar Pradesh, India, with a strong foundation in a
-          diverse set of technologies, including ASP.NET, JavaScript, SQL Server, C#.NET Framework, HTML/CSS, VB.NET,
-          Python, Java, and VBScripts , React JS , node-js. As an Information Technology Graduate from Shambhunath
-          Institute of Engineering and Technology, I am passionate about enhancing my coding skills and creating robust,
-          scalable applications.
-          With 2.5 years of experience at Stayinfront PVT LTD, a product-based company, I have honed my abilities in
-          full-stack development. I build Web Apps and Websites using ASP.NET, ASP.NET Core, ASP.NET MVC, C#,
-          JavaScript, and SQL Server while also leveraging Python and Java for debugging and optimization
+        <p>Full Stack .NET Developer with <span id="experienceYears"></span> years of experience in designing, developing, and deploying scalable enterprise web applications. Strong expertise
+          in C#, .NET Core, ASP.NET MVC/Core, Web API, Angular, and SQL Server. Experienced in building secure REST APIs with JWT authentication, API
+          versioning, and caching. Proficient in Clean Architecture, OOP principles, Azure services, and IIS deployments, with a strong focus on performance
+          optimization, scalability, and maintainable code.
+
         </p>
 
         <div class="box-container">
@@ -207,6 +208,23 @@
           </div>
         </div>
       </div>
+      <!-- Portfolio Card 2 -->
+      <div class="box tilt">
+        <div class="content">
+          <div class="tag">
+            <h3>Prakash Chemical Project</h3>
+          </div>
+          <div class="desc">
+            <b><span class="date">June 2025 - Present</span></b>
+            <p>I built and maintained the Prakash Chemical CRM application using C#, .NET
+              Framework, ASP.NET MVC, ASP.NET Core, Angular, JavaScript, VBScript, HTML, CSS, jQuery, Bootstrap, and SQL
+              Server. I implemented sales quote, customer management, warehouse, business plan, and daily visit modules,
+              plus vendor/customer portals, role-based access control, OTP login, profile management, and document upload
+              workflows. I also integrated CRM with Microsoft Dynamics 365 Business Central and Axis Bank payment
+              middleware for end-to-end payment status updates.</p>
+          </div>
+        </div>
+      </div>
       <!-- Portfolio Card 3 -->
       <div class="box tilt">
         <div class="content">
@@ -288,6 +306,7 @@
           <div class="desc">
             <h3>.NET Full Stack Developer</h3>
             <p>Jun 2025 - Present</p>
+            <p>Designed and deployed enterprise-level web applications using .NET Framework, .NET Core, ASP.NET MVC/Core, and Web API, Web Forms, and Windows Application. Developed secure and scalable RESTful APIs using JWT authentication, API versioning, and caching, improving API reliability and security. Built responsive and high-performance user interfaces using Angular 18, TypeScript, JavaScript, jQuery, HTML5, CSS3, and Blazor UI, with a strong focus on UI/UX. Worked extensively with SQL Server (SSMS) using Entity Framework, EF Core, ADO.NET, and LINQ, optimizing queries, indexing, and database performance. Improved application performance through query optimization, LINQ tuning, and proper ACID transaction handling. Integrated Azure services, including Azure Blob Storage, and worked on Microsoft 365 Business Central API integration and data flow testing. Applied Clean Architecture and OOP principles, implementing dependency injection, middleware, and structured error handling. Used Git/GitHub, SVN, and Azure DevOps for version control, CI/CD collaboration, and code management. Deployed and maintained applications on IIS servers, ensuring stability and scalability in production environments. Collaborated with cross-functional teams to debug issues, enhance application quality, and deliver solutions on time. Demonstrated strong analytical and problem-solving skills, contributing to clean, testable, and scalable codebases. Used tools on Visual Studio, SSMS, Postman, and Swagger. Implemented WhatsApp integration using a scheduler (cron jobs) and integrated the Axis Bank API through a middleware layer.</p>
           </div>
         </div>
       </div>
@@ -300,6 +319,7 @@
           <div class="desc">
             <h3>.NET Full Stack Developer</h3>
             <p>March 2023 - May 2025</p>
+            <p>Designed and deployed web applications using .NET technologies and developed secure, scalable RESTful APIs with JWT authentication. Built high-performance, responsive user interfaces leveraging Angular 18, TypeScript, HTML5, and Blazor UI, enhancing user experience with a focus on UI/UX. Optimized application and database performance through query tuning, LINQ optimization, and implementing ACID transaction handling. Integrated Azure services and Microsoft 365 Business Central API, enhancing data flow and testing reliability. Applied Clean Architecture principles and OOP, focusing on dependency injection, structured error handling, and middleware implementation. Deployed applications on IIS, collaborating with cross-functional teams to debug issues, improve application quality, and ensure scalable production environments. Utilized Git/GitHub and SVN for code management and implemented WhatsApp and Axis Bank API integrations using middleware and cron jobs.</p>
           </div>
         </div>
       </div>
@@ -312,6 +332,7 @@
           <div class="desc">
             <h3>Software Developer | Internship</h3>
             <p>November 2023 - February 2024</p>
+            <p>Supported product development by implementing new features, fixing issues, and collaborating on testing for startup software releases.</p>
           </div>
         </div>
       </div>
@@ -324,6 +345,7 @@
           <div class="desc">
             <h3>Website Developer | Internship</h3>
             <p>Sep 2021 - Nov 2021</p>
+            <p>Developed website features, optimized page layout, and helped improve user experience for an education-focused platform.</p>
           </div>
         </div>
       </div>
@@ -553,18 +575,19 @@
           <img draggable="false" src="./assets/images/contact1.png" alt="">
         </div>
         <form id="contact-form">
-
+          <input type="hidden" name="subject" value="New query from portfolio website">
+          <input type="hidden" name="to_email" value="pradumanprajapati70@gmail.com">
           <div class="form-group">
             <div class="field">
-              <input type="text" name="name" placeholder="Name" required>
+              <input type="text" name="from_name" placeholder="Name" required>
               <i class='fas fa-user'></i>
             </div>
             <div class="field">
-              <input type="text" name="email" placeholder="Email" required>
+              <input type="email" name="from_email" placeholder="Email" required>
               <i class='fas fa-envelope'></i>
             </div>
             <div class="field">
-              <input type="text" name="phone" placeholder="Phone">
+              <input type="tel" name="phone" placeholder="Phone">
               <i class='fas fa-phone-alt'></i>
             </div>
             <div class="message">
@@ -659,6 +682,7 @@
 
   <!-- ==== Linked assets js scripting file ==== -->
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./assets/js/script.js"></script>
 
 </body>

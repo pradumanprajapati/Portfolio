@@ -29,8 +29,8 @@
         "icon": "https://img.icons8.com/color/48/000000/javascript--v1.png"
     },    
     {
-        "name": "MySQL/SQL Sever",
-        "icon": "https://img.icons8.com/color/48/000000/mysql-logo.png"
+        "name": "SQL Server Management Studio (SSMS)",
+        "icon": "https://img.icons8.com/?size=100&id=J6KcaRLsTgpZ&format=png&color=000000"
     },
     {
         "name": "ReactJS",
@@ -47,5 +47,77 @@
     {
         "name": "GitHub",
         "icon": "https://img.icons8.com/glyph-neue/48/ffffff/github.png"
-    }   
+    },
+    {
+        "name": "Web API",
+        "icon": "https://img.icons8.com/fluency/48/000000/api.png"
+    },
+    {
+        "name": "Entity Framework Core",
+        "icon": "https://img.icons8.com/?size=100&id=1BC75jFEBED6&format=png&color=000000"
+    },
+    {
+        "name": "OOPS",
+        "icon": "https://img.icons8.com/?size=100&id=Ubw6iO0FcFth&format=png&color=000000"
+    },
+    {
+        "name": "VB Scripts",
+        "icon": "https://img.icons8.com/?size=100&id=nizVC2gjBGjV&format=png&color=000000"
+    },
+    {
+        "name": "VB.NET",
+        "icon": "https://img.icons8.com/?size=100&id=nizVC2gjBGjV&format=png&color=000000"
+    },
+    {
+        "name": "Git",
+        "icon": "https://img.icons8.com/color/48/000000/git.png"
+    },
+    {
+        "name": "Tortoise SVN",
+        "icon": "https://img.icons8.com/?size=100&id=OlKxPKH1MVsH&format=png&color=000000"
+    },
+    {
+        "name": "Debugging",
+        "icon": "https://img.icons8.com/fluency/48/000000/bug.png"
+    },
+    {
+        "name": "Angular",
+        "icon": "https://img.icons8.com/color/48/000000/angularjs.png"
+    },
+    {
+        "name": "Azure DevOps",
+        "icon": "https://img.icons8.com/color/48/000000/azure-1.png"
+    },
+    {
+        "name": "ADO.NET",
+        "icon": "https://img.icons8.com/?size=100&id=yzlNpHU1FNTq&format=png&color=000000"
+    },
+    {
+        "name": "Blazor UI",
+        "icon": "https://img.icons8.com/?size=100&id=66TslYQuFETx&format=png&color=000000"
+    },
+    {
+        "name": "Data Structures and Algorithms",
+        "icon": "https://img.icons8.com/?size=100&id=44793&format=png&color=000000"
+    },
+    {
+        "name": "Microservices",
+        "icon": "https://img.icons8.com/?size=100&id=48187&format=png&color=000000"
+    },
+    {
+        "name": "TypeScript",
+        "icon": "https://img.icons8.com/color/48/000000/typescript.png"
+    },
+    {
+        "name": "Web Forms",
+        "icon": "https://img.icons8.com/color/48/000000/web-design.png"
+    },
+    {
+        "name": "WCF",
+        "icon": "https://img.icons8.com/?size=100&id=23jDhlZ83fnY&format=png&color=000000"
+    },
+    {
+        "name": "UI/UX",
+        "icon": "https://img.icons8.com/?size=100&id=49407&format=png&color=000000"
+    }
 ]

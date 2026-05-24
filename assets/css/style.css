@@ -473,20 +473,21 @@ header .navbar ul li a:hover {
   background: rgba(0, 0, 22, 0.4);
   color: #fff;
   border-radius: 1rem;
-  padding: 2rem;
-  width: 90%;
-  margin: auto;
+  padding: 2rem 3rem;
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
   margin-top: 2rem;
+  box-sizing: border-box;
 }
 .skills .container .row {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.8rem;
 }
 .skills .container .bar {
   margin-bottom: 15px;
-  padding: 10px;
+  padding: 14px;
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   background: rgba(0, 0, 22, 0.9);
@@ -503,14 +504,20 @@ header .navbar ul li a:hover {
   gap: 1rem;
   margin-top: 1rem;
 }
+.skills .container .bar .info img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
 .skills .container .bar .info i {
-  font-size: 4rem;
+  font-size: 4.2rem;
 }
 .skills .container .bar .info span {
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 1.8rem;
+  font-weight: 600;
   font-family: "Poppins";
   margin-left: 0.5rem;
+  text-align: center;
 }
 /* skills media queries starts*/
 @media screen and (max-width: 600px) {
@@ -548,13 +555,14 @@ header .navbar ul li a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  align-items: stretch;
+  gap: 2rem;
 }
 .education .box-container .box {
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 48%;
+  min-width: 30rem;
   border-radius: 0.5rem;
   box-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -567,6 +575,9 @@ header .navbar ul li a:hover {
 .education .box-container .box:hover {
   transform: scale(1.03);
   box-shadow: 1rem 0.5rem 1.2rem rgba(0, 0, 0, 0.3);
+}
+.education .box-container .box:nth-child(even) {
+  flex-direction: row-reverse;
 }
 .education .box-container .box .image {
   flex: 1 1 20rem;
@@ -659,11 +670,19 @@ header .navbar ul li a:hover {
   gap: 1.5rem;
   margin: 2rem;
   justify-content: center;
-  overflow: hidden; /* Hide overflowing content */
+  align-items: flex-start;
 }
 .work .box-container .box {
-  flex: 1 1 32%; /* Ensures 3 boxes per row, and each box takes up 32% of the space */
+  flex: 1 1 calc(45% - 1.5rem);
+  max-width: calc(45% - 1.5rem);
+  min-width: 28rem;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.15);
 }
 .work .box-container .box img {
   height: 100%;
@@ -676,8 +695,9 @@ header .navbar ul li a:hover {
   background: rgba(255, 255, 255, 0.95);
   display: flex;
   flex-direction: column;
-  padding-bottom: 1rem;
+  padding: 1.5rem;
   box-sizing: border-box;
+  flex: 1;
 }
 .work .box-container .box .content .tag {
   display: flex;
@@ -739,6 +759,14 @@ header .navbar ul li a:hover {
   transform: translateX(5px);
 }
 
+@media screen and (max-width: 900px) {
+  .work .box-container .box {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
 
 /* work section ends */
 
@@ -784,10 +812,10 @@ header .navbar ul li a:hover {
   font-family: "Font Awesome\ 5 Free";
 }
 .experience .left {
-  left: 0;
+  left: -300px;
 }
 .experience .right {
-  left: 50%;
+  left: 300px;
 }
 /* arrows pointing right */
 .experience .left::before {
@@ -923,18 +951,21 @@ header .navbar ul li a:hover {
   width: 100%;
   background: #fff;
   border-radius: 1.5rem;
-  margin: 2rem 5rem;
+  margin: 2rem auto;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 .contact .container .content {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
   padding: 2.5rem 2rem;
+  flex-wrap: wrap;
 }
 .contact .content .image-box {
-  max-width: 60%;
-  margin-left: 4rem;
+  flex: 1 1 45%;
+  max-width: 45%;
+  margin: 0;
 }
 .contact .content .image-box img {
   width: 100%;
@@ -942,8 +973,9 @@ header .navbar ul li a:hover {
   position: relative;
 }
 .contact .content form {
-  width: 45%;
-  margin-right: 3.5rem;
+  flex: 1 1 45%;
+  width: 100%;
+  margin: 0;
 }
 form .form-group {
   display: flex;
@@ -954,7 +986,7 @@ form .form-group {
   height: 50px;
   display: flex;
   position: relative;
-  margin: 1rem;
+  margin: 0.8rem 0;
   width: 100%;
 }
 form i {
@@ -1013,8 +1045,8 @@ form .message textarea::-webkit-scrollbar {
 }
 form .button-area {
   display: flex;
-  float: right;
-  flex-direction: row-reverse;
+  justify-content: flex-end;
+  margin: 1rem 0 0;
 }
 .button-area button {
   color: #fff;
